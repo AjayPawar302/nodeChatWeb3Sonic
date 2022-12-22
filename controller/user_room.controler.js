@@ -27,7 +27,7 @@ exports.userAvailableRoom = async (req, res) => {
         })
     }
     else {
-
+        
         isNewRecord = await createRoom(req.body.sender_id, req.body.receiver_id);
 
         if (isNewRecord) {
