@@ -27,7 +27,7 @@ exports.userAvailableRoom = async (req, res) => {
         })
     }
     else {
-        
+
         isNewRecord = await createRoom(req.body.sender_id, req.body.receiver_id);
 
         if (isNewRecord) {
@@ -60,10 +60,5 @@ exports.userAvailableRoom = async (req, res) => {
 }
 
 async function createRoom(sender_id, receiver_id) {
-    await user_room.create({ sender_id: sender_id, receiver_id: receiver_id }).then((result) => {
-        return result;
-    }).catch((err) => {
-        console.log(err);
-    })
-
+  return  await user_room.create({ sender_id: sender_id, receiver_id: receiver_id })
 }
