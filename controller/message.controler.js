@@ -35,16 +35,10 @@ exports.messageListByRoomId = async (room_id) =>{
 }
 
 exports.storeMessage = async (body)=>{
-    await message.create({
+  return  await message.create({
         message:body.message,
         sender_id:body.sender_id,
         receiver_id:body.receiver_id,
         room_id:body.room_id
-    }).then((data)=>{
-        if(data){
-          return data;
-        }
-    }).catch((err)=>{
-        console.log(err);
     })
 }
